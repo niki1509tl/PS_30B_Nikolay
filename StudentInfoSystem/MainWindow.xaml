@@ -5,36 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentInfoSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid x:Name="Grid">
-        <Label x:Name="PersonalInfo" Content="Personal Information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="name" Content="Name:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="25" Width="60"/>
-        <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
-        <TextBox x:Name="nameField" HorizontalAlignment="Left" Margin="150,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.367,-1.917" Height="25"/>
-        <TextBox x:Name="middleNameField" HorizontalAlignment="Left" Margin="150,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.117,-0.996" Height="25"/>
-        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.86,-0.671" Height="25" Width="100"/>
-        <TextBox x:Name="lastNameFIeld" HorizontalAlignment="Left" Margin="150,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <Label Content="Student Information" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
-        <Label Content="Faculty:" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.494"/>
-        <Label Content="Speciality:" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,0.607" Height="25" Width="100"/>
-        <Label Content="OKC:" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.55,0.588" Height="25" Width="100"/>
-        <Label Content="Status" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
-        <Label Content="Fac Number:" HorizontalAlignment="Left" Margin="10,319,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
-        <TextBox x:Name="facultyField" HorizontalAlignment="Left" Margin="150,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <TextBox x:Name="specialityField" HorizontalAlignment="Left" Margin="150,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <TextBlock HorizontalAlignment="Center" Height="96" Margin="0,84,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="0"/>
-        <TextBox x:Name="statusField" HorizontalAlignment="Left" Margin="150,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <TextBox x:Name="facNumField" HorizontalAlignment="Left" Margin="150,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <Label Content="Course:" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
-        <Label Content="Flow:" HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
-        <Label Content="Group:" HorizontalAlignment="Center" Margin="0,259,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
-        <TextBox x:Name="okcField" HorizontalAlignment="Left" Margin="150,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <TextBox x:Name="courseField" HorizontalAlignment="Left" Margin="500,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <TextBox x:Name="flowFIeld" HorizontalAlignment="Left" Margin="500,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <TextBox x:Name="groupField" HorizontalAlignment="Left" Margin="500,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
-        <Button x:Name="clearForm" Content="Clear Form" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top" Height="25" Click="clearForm_Click"/>
-        <Button x:Name="fillSampleData" Content="Fill Sample Data" HorizontalAlignment="Left" Margin="103,392,0,0" VerticalAlignment="Top" Height="25" Click="fillSampleData_Click"/>
-        <Button x:Name="disableFields" Content="Disable Fields" HorizontalAlignment="Left" Margin="230,387,0,0" VerticalAlignment="Top" Height="30" Click="disableFields_Click"/>
-        <Button x:Name="enableFIelds" Content="Enable Fields" HorizontalAlignment="Left" Margin="330,392,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="30" Width="77" Click="enableFIelds_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Row="0" Grid.Column="1" Header="Personal Information">
+            <Grid x:Name="personalInfoGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" x:Name="name" Content="Name:"/>
+                <TextBox x:Name="nameField" Grid.Row="0" Grid.Column="1" Height="25"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Middle Name:" />
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="middleNameField" Height="25"/>
+                
+                <Label Grid.Row="2" Grid.Column="0" Content="Last Name:" />
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="lastNameFIeld" Height="25"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="Student Information">
+            <Grid x:Name="studentInfoGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.Row="0" Grid.Column="0" Content="Faculty:"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="facultyField" Height="25"/>
+                
+                <Label Content="Course:" Grid.Row="0" Grid.Column="2"/>
+                <TextBox x:Name="courseField" Grid.Row="0" Grid.Column="3" Height="25"/>
+
+                <Label Content="Speciality:" Grid.Row="1" Grid.Column="0"/>
+                <TextBox x:Name="specialityField" Grid.Row="1" Grid.Column="1" Height="25"/>
+
+                <Label Content="Flow:" Grid.Row="1" Grid.Column="2"/>
+                <TextBox x:Name="flowField" Grid.Row="1" Grid.Column="3" Height="25"/>
+
+                <Label Content="OKC:" Grid.Row="2" Grid.Column="0"/>
+                <TextBox x:Name="okcField" Grid.Row="2" Grid.Column="1" Height="25"/>
+
+                <Label Content="Group:" Grid.Row="2" Grid.Column="2"/>
+                <TextBox x:Name="groupField" Grid.Row="2" Grid.Column="3" Height="25"/>
+
+                <Label Content="Status" Grid.Row="3" Grid.Column="0"/>
+                <TextBox x:Name="statusField" Grid.Row="3" Grid.Column="1" Height="25"/>
+
+                <Label Content="Fac Number:" Grid.Row="4" Grid.Column="0"/>
+                <TextBox x:Name="facNumField" Grid.Row="4" Grid.Column="1" Height="25"/>
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Grid.Column="1" Header="Buttons">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="clearForm" Content="Clear Form" Click="clearForm_Click" Grid.Column="0"/>
+                <Button x:Name="fillSampleData" Content="Fill Sample Data" Click="fillSampleData_Click" Grid.Column="1"/>
+                <Button x:Name="disableFields" Content="Disable Fields" Click="disableFields_Click" Grid.Column="2"/>
+                <Button x:Name="enableFIelds" Content="Enable Fields" Click="enableFIelds_Click" Grid.Column="3"/>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>

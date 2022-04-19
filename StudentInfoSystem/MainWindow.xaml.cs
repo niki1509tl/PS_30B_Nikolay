@@ -28,7 +28,11 @@ namespace StudentInfoSystem
 
         private void clearForm_Click(object sender, RoutedEventArgs e)
         {
-            foreach(TextBox tb in this.Grid.Children.OfType<TextBox>())
+            foreach(TextBox tb in personalInfoGrid.Children.OfType<TextBox>())
+            {
+                tb.Text = "";
+            }
+            foreach (TextBox tb in studentInfoGrid.Children.OfType<TextBox>())
             {
                 tb.Text = "";
             }
@@ -46,13 +50,17 @@ namespace StudentInfoSystem
             this.statusField.Text = student.Status;
             this.facNumField.Text = student.FacNum;
             this.courseField.Text = student.Course.ToString();
-            this.flowFIeld.Text = student.Flow.ToString();
+            this.flowField.Text = student.Flow.ToString();
             this.groupField.Text = student.Group.ToString();
         }
 
         private void disableFields_Click(object sender, RoutedEventArgs e)
         {
-            foreach (TextBox tb in this.Grid.Children.OfType<TextBox>())
+            foreach (TextBox tb in personalInfoGrid.Children.OfType<TextBox>())
+            {
+                tb.IsEnabled = false;
+            }
+            foreach (TextBox tb in studentInfoGrid.Children.OfType<TextBox>())
             {
                 tb.IsEnabled = false;
             }
@@ -60,7 +68,11 @@ namespace StudentInfoSystem
 
         private void enableFIelds_Click(object sender, RoutedEventArgs e)
         {
-            foreach (TextBox tb in this.Grid.Children.OfType<TextBox>())
+            foreach (TextBox tb in personalInfoGrid.Children.OfType<TextBox>())
+            {
+                tb.IsEnabled = true;
+            }
+            foreach (TextBox tb in studentInfoGrid.Children.OfType<TextBox>())
             {
                 tb.IsEnabled = true;
             }
