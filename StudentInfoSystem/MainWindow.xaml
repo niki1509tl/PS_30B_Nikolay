@@ -17,6 +17,20 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="1" Header="Image:">
+                <Image Width = "200" VerticalAlignment = "Top" Source="/Images/no_image.png"/>
+            </GroupBox>
+        </Grid>
+        
         <GroupBox Grid.Row="0" Grid.Column="1" Header="Personal Information">
             <Grid x:Name="personalInfoGrid">
                 <Grid.RowDefinitions>

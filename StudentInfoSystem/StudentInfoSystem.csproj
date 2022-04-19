@@ -7,7 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\no_image.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\no_image.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\UserLogin\UserLogin.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="no_image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
