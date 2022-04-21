@@ -102,11 +102,13 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="clearForm" Content="Clear Form" Click="clearForm_Click" Grid.Column="0"/>
                 <Button x:Name="fillSampleData" Content="Fill Sample Data" Click="fillSampleData_Click" Grid.Column="1"/>
                 <Button x:Name="disableFields" Content="Disable Fields" Click="disableFields_Click" Grid.Column="2"/>
                 <Button x:Name="enableFIelds" Content="Enable Fields" Click="enableFIelds_Click" Grid.Column="3"/>
+                <Button x:Name="loginButton" Content="Login Button" Click="Login" Grid.Column="4"/>
             </Grid>
         </GroupBox>
     </Grid>

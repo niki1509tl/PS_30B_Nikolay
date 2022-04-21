@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StudentInfoSystem.View;
 
 namespace StudentInfoSystem
 {
@@ -36,6 +37,11 @@ namespace StudentInfoSystem
             {
                 tb.Text = "";
             }
+        }
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+            new LoginDialog().ShowDialog();
         }
 
         private void fillSampleData_Click(object sender, RoutedEventArgs e)
