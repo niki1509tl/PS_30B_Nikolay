@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using StudentInfoSystem.View;
+using StudentInfoSystem.ViewModel;
 
 namespace StudentInfoSystem
 {
@@ -23,41 +24,14 @@ namespace StudentInfoSystem
     {
         public MainWindow()
         {
+            DataContext = new StudentPreseneter();
             InitializeComponent();
-            this.Title = "Student information system.";
-        }
-
-        private void clearForm_Click(object sender, RoutedEventArgs e)
-        {
-            foreach(TextBox tb in personalInfoGrid.Children.OfType<TextBox>())
-            {
-                tb.Text = "";
-            }
-            foreach (TextBox tb in studentInfoGrid.Children.OfType<TextBox>())
-            {
-                tb.Text = "";
-            }
+            Title = "Student information system.";
         }
 
         private void Login(object sender, RoutedEventArgs e)
         {
             new LoginDialog().ShowDialog();
-        }
-
-        private void fillSampleData_Click(object sender, RoutedEventArgs e)
-        {
-            Student student = StudentData.TestStudents.First();
-            this.nameField.Text = student.Name;
-            this.middleNameField.Text = student.MiddleName;
-            this.lastNameFIeld.Text = student.LastName;
-            this.facultyField.Text = student.Faculty;
-            this.specialityField.Text = student.Speciality;
-            this.okcField.Text = student.Degree;
-            this.statusField.Text = student.Status;
-            this.facNumField.Text = student.FacNum;
-            this.courseField.Text = student.Course.ToString();
-            this.flowField.Text = student.Flow.ToString();
-            this.groupField.Text = student.Group.ToString();
         }
 
         private void disableFields_Click(object sender, RoutedEventArgs e)

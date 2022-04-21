@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:StudentInfoSystem"
+        xmlns:local="clr-namespace:StudentInfoSystem" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="500" Width="800"
+        xmlns:ViewModel="clr-namespace:StudentInfoSystem.ViewModel">
+    <Window.DataContext>
+        <ViewModel:StudentPreseneter/>
+    </Window.DataContext>
     <Grid x:Name="Grid">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -43,13 +47,13 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" x:Name="name" Content="Name:"/>
-                <TextBox x:Name="nameField" Grid.Row="0" Grid.Column="1" Height="25"/>
+                <TextBox Text="{Binding Student.Name}" x:Name="nameField" Grid.Row="0" Grid.Column="1" Height="25"/>
 
                 <Label Grid.Row="1" Grid.Column="0" Content="Middle Name:" />
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="middleNameField" Height="25"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="middleNameField" Height="25" Text="{Binding Student.MiddleName}"/>
                 
                 <Label Grid.Row="2" Grid.Column="0" Content="Last Name:" />
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="lastNameFIeld" Height="25"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="lastNameFIeld" Height="25" Text="{Binding Student.LastName}"/>
             </Grid>
         </GroupBox>
         <GroupBox Grid.Row="1" Grid.Column="1" Header="Student Information">
@@ -69,28 +73,28 @@
                 </Grid.ColumnDefinitions>
                 
                 <Label Grid.Row="0" Grid.Column="0" Content="Faculty:"/>
-                <TextBox Grid.Row="0" Grid.Column="1" x:Name="facultyField" Height="25"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="facultyField" Height="25" Text="{Binding Student.Faculty}"/>
                 
                 <Label Content="Course:" Grid.Row="0" Grid.Column="2"/>
-                <TextBox x:Name="courseField" Grid.Row="0" Grid.Column="3" Height="25"/>
+                <TextBox x:Name="courseField" Grid.Row="0" Grid.Column="3" Height="25" Text="{Binding Student.Course}"/>
 
                 <Label Content="Speciality:" Grid.Row="1" Grid.Column="0"/>
-                <TextBox x:Name="specialityField" Grid.Row="1" Grid.Column="1" Height="25"/>
+                <TextBox x:Name="specialityField" Grid.Row="1" Grid.Column="1" Height="25" Text="{Binding Student.Speciality}"/>
 
                 <Label Content="Flow:" Grid.Row="1" Grid.Column="2"/>
-                <TextBox x:Name="flowField" Grid.Row="1" Grid.Column="3" Height="25"/>
+                <TextBox x:Name="flowField" Grid.Row="1" Grid.Column="3" Height="25" Text="{Binding Student.Flow}"/>
 
                 <Label Content="OKC:" Grid.Row="2" Grid.Column="0"/>
-                <TextBox x:Name="okcField" Grid.Row="2" Grid.Column="1" Height="25"/>
+                <TextBox x:Name="okcField" Grid.Row="2" Grid.Column="1" Height="25" Text="{Binding Student.Degree}"/>
 
                 <Label Content="Group:" Grid.Row="2" Grid.Column="2"/>
-                <TextBox x:Name="groupField" Grid.Row="2" Grid.Column="3" Height="25"/>
+                <TextBox x:Name="groupField" Grid.Row="2" Grid.Column="3" Height="25" Text="{Binding Student.Group}"/>
 
                 <Label Content="Status" Grid.Row="3" Grid.Column="0"/>
-                <TextBox x:Name="statusField" Grid.Row="3" Grid.Column="1" Height="25"/>
+                <TextBox x:Name="statusField" Grid.Row="3" Grid.Column="1" Height="25" Text="{Binding Student.Status}"/>
 
                 <Label Content="Fac Number:" Grid.Row="4" Grid.Column="0"/>
-                <TextBox x:Name="facNumField" Grid.Row="4" Grid.Column="1" Height="25"/>
+                <TextBox x:Name="facNumField" Grid.Row="4" Grid.Column="1" Height="25" Text="{Binding Student.FacNum}"/>
 
             </Grid>
         </GroupBox>
@@ -104,8 +108,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="clearForm" Content="Clear Form" Click="clearForm_Click" Grid.Column="0"/>
-                <Button x:Name="fillSampleData" Content="Fill Sample Data" Click="fillSampleData_Click" Grid.Column="1"/>
+                <Button x:Name="clearForm" Content="Clear Form" Command="{Binding ClearDataCommand}" Grid.Column="0"/>
+                <Button x:Name="fillSampleData" Content="Fill Sample Data" Command="{Binding FillSampleCommand}" Grid.Column="1"/>
                 <Button x:Name="disableFields" Content="Disable Fields" Click="disableFields_Click" Grid.Column="2"/>
                 <Button x:Name="enableFIelds" Content="Enable Fields" Click="enableFIelds_Click" Grid.Column="3"/>
                 <Button x:Name="loginButton" Content="Login Button" Click="Login" Grid.Column="4"/>
