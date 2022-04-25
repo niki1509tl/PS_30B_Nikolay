@@ -18,9 +18,9 @@ namespace UserLogin
         static private List<User> _testUsers = new List<User>();
         private static void ResetTestUserData()
         {
-            _testUsers.Add(new User("Ivancho", "1234567", "12345", DateTime.Today, DateTime.MaxValue, UserRoles.STUDENT));
-            _testUsers.Add(new User("Georgi", "123456", "12345", DateTime.Today, DateTime.MaxValue, UserRoles.STUDENT));
-            _testUsers.Add(new User("Nikolay", "12345", "12345", DateTime.Today, DateTime.MaxValue, UserRoles.ADMIN));
+            _testUsers.Add(new User("Ivan", "1234567", "12345", DateTime.Today, DateTime.MaxValue, UserRoles.STUDENT));
+            _testUsers.Add(new User("Test", "123456", "222", DateTime.Today, DateTime.MaxValue, UserRoles.STUDENT));
+            _testUsers.Add(new User("Nikolay", "12345", "121219052", DateTime.Today, DateTime.MaxValue, UserRoles.ADMIN));
 
         }
 

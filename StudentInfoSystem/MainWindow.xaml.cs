@@ -24,14 +24,14 @@ namespace StudentInfoSystem
     {
         public MainWindow()
         {
-            DataContext = new StudentPreseneter();
+            DataContext = new StudentPreseneter(new Student("", "", "", "", "", "", "", "", 0, 0, 0));
             InitializeComponent();
             Title = "Student information system.";
         }
 
         private void Login(object sender, RoutedEventArgs e)
         {
-            new LoginDialog().ShowDialog();
+            new LoginDialog(student => { DataContext = new StudentPreseneter(student); }).ShowDialog();
         }
 
         private void disableFields_Click(object sender, RoutedEventArgs e)

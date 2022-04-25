@@ -7,9 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800"
         xmlns:ViewModel="clr-namespace:StudentInfoSystem.ViewModel">
-    <Window.DataContext>
-        <ViewModel:StudentPreseneter/>
-    </Window.DataContext>
     <Grid x:Name="Grid">
         <Grid.RowDefinitions>
             <RowDefinition/>

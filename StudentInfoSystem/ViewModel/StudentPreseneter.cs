@@ -19,9 +19,9 @@ namespace StudentInfoSystem.ViewModel
             }
         }
 
-        public StudentPreseneter()
+        public StudentPreseneter(Student student)
         {
-
+            _student = student;
         }
 
         public ICommand FillSampleCommand

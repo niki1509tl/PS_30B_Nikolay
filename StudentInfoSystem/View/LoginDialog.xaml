@@ -48,7 +48,7 @@
         <!-- Accept or Cancel -->
         <Label Foreground="Red" Name="ErrorMessage" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"></Label>
         <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Click="Login" IsDefault="True">Login</Button>
+            <Button Click="Login" IsDefault="True" Command="">Login</Button>
             <Button IsCancel="True">Cancel</Button>
         </StackPanel>
     </Grid >

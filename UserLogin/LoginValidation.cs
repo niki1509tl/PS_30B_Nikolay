@@ -42,6 +42,18 @@ namespace UserLogin
             }
         }
 
+        public User FindUser(String username, String pass)
+        {
+            foreach(User user in UserData.TestUsers)
+            {
+                if(user.Name == username && user.Password == pass)
+                {
+                    return user;
+                }
+            }
+            throw new Exception("User could not be found");
+        }
+
         private Boolean isValidUsername()
         {
             if (Username.Equals(String.Empty)){
